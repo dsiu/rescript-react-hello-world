@@ -1,6 +1,13 @@
 <component name="libraryTable">
   <library name="Bucklescript" type="javaScript">
-    <CLASSES />
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/@rescript/react" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/@rescript/react" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
