@@ -10,5 +10,7 @@ let make = () => {
   | _ => <div> {React.string("Route not found")} </div>
   }
 
+  let (state, dispatch) = React.useReducer(Store.reducer, Store.initialState)
+
   <div> <NavBar /> {component} </div>
 }

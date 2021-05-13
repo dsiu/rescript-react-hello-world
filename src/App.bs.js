@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.bs.js";
+import * as Store$RescriptReactHelloWorld from "./Store.bs.js";
 import * as NavBar$RescriptReactHelloWorld from "./NavBar.bs.js";
 
 function App(Props) {
@@ -46,6 +47,7 @@ function App(Props) {
   if (exit === 1) {
     component = React.createElement("div", undefined, "Route not found");
   }
+  React.useReducer(Store$RescriptReactHelloWorld.reducer, Store$RescriptReactHelloWorld.initialState);
   return React.createElement("div", undefined, React.createElement(NavBar$RescriptReactHelloWorld.make, {}), component);
 }
 
