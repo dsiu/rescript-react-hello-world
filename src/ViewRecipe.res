@@ -14,7 +14,7 @@ let make = (~state: Store.state, ~title: string) => {
       </div>
       <div>
         <h3> {React.string("Tags")} </h3>
-        <div> {recipe.tags->Array.map(tag => <div> {React.string(tag)} </div>)->React.array} </div>
+        <div> {recipe.tags->Array.map(tag => <div onClick={_ => RescriptReactRouter.push(`/tags/${tag}`)}> {React.string(tag)} </div>)->React.array} </div>
       </div>
     </div>
   }

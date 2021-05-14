@@ -2,10 +2,12 @@
 
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
+import * as Belt_MapString from "bs-platform/lib/es6/belt_MapString.js";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.bs.js";
 import * as Store$RescriptReactHelloWorld from "./Store.bs.js";
 import * as NavBar$RescriptReactHelloWorld from "./NavBar.bs.js";
 import * as AllTags$RescriptReactHelloWorld from "./AllTags.bs.js";
+import * as RecipeList$RescriptReactHelloWorld from "./RecipeList.bs.js";
 import * as ViewRecipe$RescriptReactHelloWorld from "./ViewRecipe.bs.js";
 
 function App(Props) {
@@ -55,8 +57,16 @@ function App(Props) {
           }
           break;
       case "tags" :
-          if (match$1.tl) {
-            exit = 1;
+          var match$3 = match$1.tl;
+          if (match$3) {
+            if (match$3.tl) {
+              exit = 1;
+            } else {
+              var recipesOption = Belt_MapString.get(state.tags, match$3.hd);
+              component = recipesOption !== undefined ? React.createElement("div", undefined, React.createElement(RecipeList$RescriptReactHelloWorld.make, {
+                          recipes: recipesOption
+                        })) : React.createElement("div", undefined, "no recipe");
+            }
           } else {
             component = React.createElement(AllTags$RescriptReactHelloWorld.make, {
                   tags: state.tags
