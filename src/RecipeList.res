@@ -11,6 +11,4 @@ let make = (~recipes: array<string>) => {
     )
     ->React.array}
   </div>
-  }
-
-
+}
